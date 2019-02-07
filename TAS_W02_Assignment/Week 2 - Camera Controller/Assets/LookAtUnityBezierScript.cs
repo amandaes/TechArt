@@ -27,6 +27,8 @@ public class LookAtUnityBezierScript : MonoBehaviour {
              
 	}
 
+    //marking points on the curve
+
     private void PutPointsOnCurve()
     {
         for (int i = 0; i <= 100; i++)
@@ -38,6 +40,8 @@ public class LookAtUnityBezierScript : MonoBehaviour {
         }
     }
 	
+
+    //calculate end point of the last bezier curve and make a new one start at that end point.
     Vector3 CalculateBezier(BezierExample curveData, float t)
     {
         Vector3 a = curveData.startPoint;

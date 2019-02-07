@@ -24,8 +24,9 @@ public class LookAtButtonForLAUB : Editor {
                 BezierExample lastBe = _myLAUB.curveList[_myLAUB.curveList.Count - 1];
                 newBe.startPoint = lastBe.endPoint;
                 newBe.endPoint = lastBe.endPoint;
+                newBe.startTangent = lastBe.endPoint;
                 newBe.endTangent = lastBe.endTangent;
-                //if you are creating a subsequent bezier
+               
             }
            
 
