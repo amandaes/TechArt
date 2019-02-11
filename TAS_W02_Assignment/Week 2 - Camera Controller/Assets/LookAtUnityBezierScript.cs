@@ -12,6 +12,22 @@ public class LookAtUnityBezierScript : MonoBehaviour {
 
     public List<BezierExample> curveList = new List<BezierExample>();
 
+    public float camSpeed;
+
+    private bool loopClosed;
+
+    public void MakeWayPoint()
+    {
+        if (!loopClosed)
+        {
+            if (curveList.Count == 0)
+            {
+                curveList.Add(GameObject.Find("Model").AddComponent<BezierExample>());
+                
+            }
+        }
+    }
+
 	// Use this for initialization
 	public void Start () {
         //Run through 100 points and place a marker at those points on the bezier curver.
@@ -62,5 +78,7 @@ public class LookAtUnityBezierScript : MonoBehaviour {
 
     }
 
+
+    
 	
 }
