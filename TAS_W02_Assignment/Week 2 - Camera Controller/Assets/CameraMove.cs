@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraMove : MonoBehaviour {
 
-    public List <BezierExample>
+    public List<BezierExample> name;
 
 	// Use this for initialization
 	void Start () {
