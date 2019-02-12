@@ -12,20 +12,21 @@ public class LookAtUnityBezierScript : MonoBehaviour {
 
     public List<BezierExample> curveList = new List<BezierExample>();
 
-    public float camSpeed;
+   
 
-    private bool loopClosed;
+    //private bool loopClosed;
 
-    public void MakeWayPoint()
+    public void grabLostCurves()
     {
-        if (!loopClosed)
+        curveList.Clear();
+        Transform model = GameObject.Find("Model").transform;
+        BezierExample[] all = model.GetComponents<BezierExample>();
+
+        for (int i = 0; i < all.Length; i++)
         {
-            if (curveList.Count == 0)
-            {
-                curveList.Add(GameObject.Find("Model").AddComponent<BezierExample>());
-                
-            }
-        }
+            curveList.Add(all[i]);
+
+        } 
     }
 
 	// Use this for initialization
@@ -78,7 +79,34 @@ public class LookAtUnityBezierScript : MonoBehaviour {
 
     }
 
+    public float camSpeed;
+    private float t;
+    private int curveIndex;
+    private float distToTravel;
+    private float percToTravel;
+    private Vector3 lastPos;
 
-    
-	
+    public void Update()
+    {
+        distToTravel = Time.deltaTime * camSpeed;
+        percToTravel = curveList[curveIndex].GetPercForDist(distToTravel);
+
+        if (t + percToTravel > 1)
+        {
+            float PercLeftOnFirstLeg = 1 - t;
+            float DistLeftOnFirstLeg = curveList[curveIndex].GetDistForPerc(PercLeftOnFirstLeg);
+            float DistCarryover = distToTravel - DistLeftOnFirstLeg;
+
+            curveIndex++;
+            if (curveIndex > curveList.Count - 1)
+                curveIndex = 0;
+            t = curveList[curveIndex].GetPercForDist(DistCarryover);
+        }
+        else
+            t += percToTravel;
+
+        Vector3 spotOnTrack = curveList[curveIndex].GetPositionOnPath(t);
+    }
+
+
 }
