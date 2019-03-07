@@ -83,7 +83,6 @@ public class MeshWriter : MonoBehaviour
     {
         _myMesh.vertices = _verts;
         _myMesh.triangles = _tris;
-        //_myMesh.normals = _normals;
         _myMesh.uv = _uVs;
 
         _myMesh.RecalculateNormals();
@@ -91,14 +90,5 @@ public class MeshWriter : MonoBehaviour
         _myMF.mesh = _myMesh;
     }
 
-    //private void Update()
-    //{
-    //    _verts[0] = Vector3.zero;
-    //    _verts[1] = Vector3.right * (Mathf.Sin(Time.time) + 3);
-    //    _verts[2] = Vector3.up * (Mathf.Cos(Time.time) + 3);
 
-    //    _RandomUVs();
-
-    //    _ApplyMesh();
-    //}
 }
