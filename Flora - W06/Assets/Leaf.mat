@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Bush
-  m_Shader: {fileID: 4800000, guid: a5f74f80071369142ba8edea89deee4e, type: 3}
+  m_Name: Leaf
+  m_Shader: {fileID: 4800000, guid: c1edd95f2185eb34395c774b94115fa1, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
