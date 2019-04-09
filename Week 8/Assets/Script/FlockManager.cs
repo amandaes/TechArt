@@ -32,7 +32,7 @@ public class FlockManager : MonoBehaviour
         {
            AutoAgentBehavior a = g.GetComponent<AutoAgentBehavior>(); //get reference to auto agent behavior
 
-           Physics.OverlapSphereNonAlloc(g.transform, 5, collInRad);
+           Physics.OverlapSphereNonAlloc(g.transform.position, 5, collInRad);
 
             a.PassArrayOfContext(collInRad);
         }

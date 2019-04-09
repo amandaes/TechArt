@@ -90,7 +90,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.21
+  m_Radius: 0.02
   m_Center: {x: 0.000037597492, y: -0.0011104058, z: -0.0003001974}
 --- !u!114 &1777191014
 MonoBehaviour:
@@ -107,3 +107,7 @@ MonoBehaviour:
   moveDirection: {x: 0, y: 0, z: 0}
   moveVelocityMagnitude: 3
   myModelTransform: {fileID: 0}
+  clumpStrength: 0
+  alignStrength: 0
+  avoidanceStrength: 0
+  originStrength: 0
